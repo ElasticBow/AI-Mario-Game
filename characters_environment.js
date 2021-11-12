@@ -309,6 +309,7 @@ function manualControl(character){
 /* Movements of character */
 function jumping(character){
 	if( (noseY < 200 &&character.live) || (touchIsDown&&character.live) ){
+    mario_jump.play();
 		character.velocity.y+=gameConfig.jump;
 	}
 }
@@ -376,6 +377,7 @@ function die(character){
     character.status="dead";
     character.changeAnimation('dead');
     character.velocity.y-=2;
+    mario_die.play();
 }
 
 // check character status and response to sprite and game status
